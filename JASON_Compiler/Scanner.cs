@@ -8,7 +8,8 @@ public enum Token_Class
     Dot, Semicolon, Comma, LParanthesis, RParanthesis, EqualOp, LessThanOp,
     GreaterThanOp, NotEqualOp, PlusOp, MinusOp, MultiplyOp, DivideOp,
     Idenifier, Constant, RightBraces, LeftBraces, DataTypeINT, Comment,
-    Repeat, Return, Assign, String
+    Repeat, Return, Assign, String, ANDoperator, ORoperator, ElseIF,
+    DataTypeString, DataTypeFloat, EndL
 }
 namespace JASON_Compiler
 {
@@ -34,6 +35,7 @@ namespace JASON_Compiler
             ReservedWords.Add("end", Token_Class.End);
             ReservedWords.Add("do", Token_Class.Do);
             ReservedWords.Add("else", Token_Class.Else);
+            ReservedWords.Add("elseif", Token_Class.ElseIF);
             ReservedWords.Add("endif", Token_Class.EndIf);
             ReservedWords.Add("enduntil", Token_Class.EndUntil);
             ReservedWords.Add("endwhile", Token_Class.EndWhile);
@@ -51,6 +53,9 @@ namespace JASON_Compiler
             ReservedWords.Add("while", Token_Class.While);
             ReservedWords.Add("write", Token_Class.Write);
             ReservedWords.Add("int", Token_Class.DataTypeINT);
+            ReservedWords.Add("float", Token_Class.DataTypeFloat);
+            ReservedWords.Add("string", Token_Class.DataTypeString);
+            ReservedWords.Add("endl", Token_Class.EndL);
 
             Operators.Add(".", Token_Class.Dot);
             Operators.Add(";", Token_Class.Semicolon);
@@ -68,6 +73,8 @@ namespace JASON_Compiler
             Operators.Add("{", Token_Class.LeftBraces);
             Operators.Add("}", Token_Class.RightBraces);
             Operators.Add(":=", Token_Class.Assign);
+            Operators.Add("||", Token_Class.ORoperator);
+            Operators.Add("&&", Token_Class.ANDoperator);
 
         }
 
@@ -176,6 +183,28 @@ namespace JASON_Compiler
                     FindTokenClass(CurrentLexeme);
                     i = j ;
                 }
+                else if (CurrentChar == '|')
+                {
+                    j++;
+                    if (j < SourceCode.Length)
+                        if (SourceCode[j] == '|')
+                        {
+                            CurrentLexeme += SourceCode[j];
+                        }
+                    FindTokenClass(CurrentLexeme);
+                    i = j;
+                }
+                else if (CurrentChar == '&')
+                {
+                    j++;
+                    if (j < SourceCode.Length)
+                        if (SourceCode[j] == '&')
+                        {
+                            CurrentLexeme += SourceCode[j];
+                        }
+                    FindTokenClass(CurrentLexeme);
+                    i = j;
+                }
                 else if (CurrentChar == '!')
                 {
                     j++;
@@ -246,12 +275,12 @@ namespace JASON_Compiler
 
         bool isComment(string lex)
         {
-            var regex = new Regex(@"^\/\*[\w\s@./#<=>:&+\-[\]]*\]*\*\/$");
+            var regex = new Regex(@"^\/\*[\w\s@./’#<=>:&+\-[\]]*\]*\*\/$");
             return regex.IsMatch(lex);
         }
         bool isString(string lex)
         {
-            var regex = new Regex("^\"[\\w\\s@./#<=>:&+\\-[\\]]*\"$");
+            var regex = new Regex("^\"[\\w\\s@./#<=>’:&+\\-[\\]]*\"$");
             return regex.IsMatch(lex);
         }
         bool isIdentifier(string lex)

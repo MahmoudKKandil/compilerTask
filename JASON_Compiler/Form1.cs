@@ -64,6 +64,7 @@ namespace JASON_Compiler
             dataGridView1.Rows.Clear();
             textBox2.Clear();
             number.Text = "";
+            Errors.Error_List.Clear();
             JASON_Compiler.TokenStream.Clear();
         }
 
