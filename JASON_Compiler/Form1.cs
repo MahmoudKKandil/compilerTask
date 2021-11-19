@@ -19,7 +19,7 @@ namespace JASON_Compiler
 
         private void button1_Click(object sender, EventArgs e)
         {
-            textBox2.Clear();
+            Clear();
             //string Code=textBox1.Text.ToLower();
             string Code = textBox1.Text;
             JASON_Compiler.Start_Compiling(Code);
@@ -27,6 +27,7 @@ namespace JASON_Compiler
          //   PrintLexemes();
 
             PrintErrors();
+            number.Text= dataGridView1.Rows.Count.ToString();
         }
         void PrintTokens()
         {
@@ -56,7 +57,13 @@ namespace JASON_Compiler
 
         private void button2_Click(object sender, EventArgs e)
         {
+            Clear();
+        }
+        void Clear()
+        {
             dataGridView1.Rows.Clear();
+            textBox2.Clear();
+            number.Text = "";
             JASON_Compiler.TokenStream.Clear();
         }
 

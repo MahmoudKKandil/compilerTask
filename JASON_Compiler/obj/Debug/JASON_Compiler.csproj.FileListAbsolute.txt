@@ -63,3 +63,15 @@ C:\Users\Sc\Desktop\[2021-2022] JASON_Compiler_Template - For Students\JASON_Com
 C:\Users\Sc\Desktop\[2021-2022] JASON_Compiler_Template - For Students\JASON_Compiler\obj\Debug\JASON_Compiler.Form2.resources
 C:\Users\Sc\Desktop\[2021-2022] JASON_Compiler_Template - For Students\JASON_Compiler\obj\Debug\JASON_Compiler.Properties.Resources.resources
 C:\Users\Sc\Desktop\[2021-2022] JASON_Compiler_Template - For Students\JASON_Compiler\obj\Debug\JASON_Compiler.csproj.GenerateResource.Cache
+D:\College\4th\flash\compilerTask\JASON_Compiler\bin\Debug\JASON_Compiler.exe.config
+D:\College\4th\flash\compilerTask\JASON_Compiler\bin\Debug\JASON_Compiler.exe
+D:\College\4th\flash\compilerTask\JASON_Compiler\bin\Debug\JASON_Compiler.pdb
+D:\College\4th\flash\compilerTask\JASON_Compiler\obj\Debug\JASON_Compiler.csproj.AssemblyReference.cache
+D:\College\4th\flash\compilerTask\JASON_Compiler\obj\Debug\JASON_Compiler.csproj.SuggestedBindingRedirects.cache
+D:\College\4th\flash\compilerTask\JASON_Compiler\obj\Debug\JASON_Compiler.Form1.resources
+D:\College\4th\flash\compilerTask\JASON_Compiler\obj\Debug\JASON_Compiler.Form2.resources
+D:\College\4th\flash\compilerTask\JASON_Compiler\obj\Debug\JASON_Compiler.Properties.Resources.resources
+D:\College\4th\flash\compilerTask\JASON_Compiler\obj\Debug\JASON_Compiler.csproj.GenerateResource.cache
+D:\College\4th\flash\compilerTask\JASON_Compiler\obj\Debug\JASON_Compiler.csproj.CoreCompileInputs.cache
+D:\College\4th\flash\compilerTask\JASON_Compiler\obj\Debug\JASON_Compiler.exe
+D:\College\4th\flash\compilerTask\JASON_Compiler\obj\Debug\JASON_Compiler.pdb
